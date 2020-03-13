@@ -150,16 +150,6 @@ module.exports = ({
             ],
           },
           {
-            test: /\.(png|jpe?g|gif)$/i,
-            use: {
-              loader: "url-loader",
-              options: {
-                limit: 8192,
-                name: "images/[name].[hash:8].[ext]",
-              },
-            },
-          },
-          {
             test: /\.svg$/,
             use: {
               loader: "@svgr/webpack",
@@ -167,10 +157,25 @@ module.exports = ({
             },
           },
           {
+            test: /\.(png|jpe?g|gif)$/i,
+            use: {
+              loader: "url-loader",
+              options: {
+                limit: 5125,
+                name: "images/[name].[hash:8].[ext]",
+                // https://github.com/vuejs/vue-loader/issues/1612
+                esModule: false,
+              },
+            },
+          },
+          {
             test: /\.(eot|otf|ttf|woff|woff2)$/,
-            loader: "file-loader",
+            loader: "url-loader",
             options: {
+              limit: 5125,
               name: "fonts/[name].[hash:8].[ext]",
+              // https://github.com/vuejs/vue-loader/issues/1612
+              esModule: false,
             },
           },
         ],
