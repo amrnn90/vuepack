@@ -151,10 +151,7 @@ module.exports = ({
           },
           {
             test: /\.svg$/,
-            use: {
-              loader: "@svgr/webpack",
-              options: {},
-            },
+            use: ["babel-loader", "vue-svg-loader"],
           },
           {
             test: /\.(png|jpe?g|gif)$/i,

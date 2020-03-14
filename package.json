@@ -1,6 +1,6 @@
 {
   "name": "@amrnn/vuepack",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "keywords": [],
@@ -34,6 +34,7 @@
     "terser-webpack-plugin": "^2.3.5",
     "url-loader": "^3.0.0",
     "vue-loader": "^15.9.0",
+    "vue-svg-loader": "^0.16.0",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14",
