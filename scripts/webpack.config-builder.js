@@ -131,7 +131,7 @@ module.exports = ({
         path: outputAbsPath,
         publicPath: "/",
         filename: `js/${jsBundleName}`,
-        chunkFilename: "[name].js",
+        chunkFilename: "js/[name].js",
       },
       module: {
         rules: [
