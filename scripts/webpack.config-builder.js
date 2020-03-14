@@ -199,6 +199,9 @@ module.exports = ({
       },
       resolve: {
         extensions: ["*", ".js", ".vue", ".json"],
+        alias: {
+          "@": srcPath,
+        },
       },
       devtool: "source-map",
       stats: {
