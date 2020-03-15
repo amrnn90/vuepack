@@ -140,14 +140,15 @@ module.exports = ({
             loader: "vue-loader",
           },
           {
-            test: /.js?$/,
+            test: /.js$/,
             exclude: /node_modules/,
-            use: [
-              {
-                loader: "babel-loader",
-              },
-              "eslint-loader",
-            ],
+            use: "babel-loader",
+          },
+          {
+            test: /\.(js|vue)$/,
+            enforce: "pre",
+            loader: "eslint-loader",
+            exclude: /node_modules/,
           },
           {
             test: /\.svg$/,
