@@ -20,6 +20,7 @@ module.exports = ({
   staticPath,
   proxies,
   context,
+  extendConfig,
 }) => {
   const mode = process.env.NODE_ENV || "development";
 
@@ -122,7 +123,7 @@ module.exports = ({
     },
   });
 
-  return webpackMerge(
+  let config = webpackMerge(
     {
       mode: mode,
       context: context,
@@ -224,4 +225,10 @@ module.exports = ({
     conditionalPlugins(),
     mode == "development" ? devConfig() : prodConfig()
   );
+
+  if (typeof extendConfig === "function") {
+    config = extendConfig(config);
+  }
+
+  return config;
 };

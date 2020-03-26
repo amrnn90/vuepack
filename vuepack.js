@@ -25,6 +25,9 @@ const options = {
 
   /** proxies: each item is an array of: [from, target] */
   proxies: [],
+
+  /** callback that allows extending webpack config directly */
+  extendConfig: null,
 };
 
 run(options);
